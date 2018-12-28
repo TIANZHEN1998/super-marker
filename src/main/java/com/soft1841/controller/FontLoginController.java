@@ -29,21 +29,20 @@ public class FontLoginController {
         if (flag) {
             alert.setContentText("登录成功!");
             alert.showAndWait();
+            Stage mainStage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fontmain.fxml"));
+            AnchorPane root = fxmlLoader.load();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("/css/style.css");
+            mainStage.setTitle("智行超市收银中心");
+            mainStage.setMaximized(true);
+            mainStage.setScene(scene);
+            mainStage.getIcons().add(new Image("/img/logo.png"));
+            mainStage.show();
+            Stage loginStage = (Stage) accountField.getScene().getWindow();
         } else {
             alert.setContentText("账号或密码错误，登录失败!");
             alert.showAndWait();
         }
-        Stage mainStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/fontmain.fxml"));
-        AnchorPane root = fxmlLoader.load();
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add("/css/style.css");
-        mainStage.setTitle("智行超市收银中心");
-        mainStage.setMaximized(true);
-        mainStage.setScene(scene);
-        mainStage.getIcons().add(new Image("/img/logo.png"));
-        mainStage.show();
-        Stage loginStage = (Stage) accountField.getScene().getWindow();
-        loginStage.close();
     }
 }
