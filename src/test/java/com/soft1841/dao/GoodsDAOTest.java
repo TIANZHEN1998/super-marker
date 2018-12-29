@@ -1,7 +1,5 @@
 package com.soft1841.dao;
 
-import cn.hutool.db.Db;
-import cn.hutool.db.Entity;
 import com.soft1841.entity.Goods;
 import com.soft1841.utils.DAOFactory;
 import org.junit.Test;
