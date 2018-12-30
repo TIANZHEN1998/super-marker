@@ -1,7 +1,6 @@
 package com.soft1841.entity;
-
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleLongProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 /**
  * 明细实体类
@@ -10,45 +9,63 @@ import javafx.beans.property.SimpleLongProperty;
 public class Detail {
     private final SimpleLongProperty DetailId = new SimpleLongProperty();
     private final SimpleLongProperty TicketId = new SimpleLongProperty();
-    private final SimpleLongProperty GoodsId = new SimpleLongProperty();
-    private final SimpleDoubleProperty Number = new SimpleDoubleProperty();
+    private final SimpleStringProperty GoodsId = new SimpleStringProperty();
+    private final SimpleLongProperty Number = new SimpleLongProperty();
 
-    public Detail() {
+    public Detail () {
+
     }
 
-    public Detail(String detailId, long ticketId, long goodsId, Double number){
-        setDetailId(detailId);
-        setTicketId(ticketId);
-        setGoodsId(goodsId);
-        setNumber(number);
+    public long getDetailId () {
+        return DetailId.get();
     }
 
-    public long getDetailId() { return DetailId.get(); }
+    public SimpleLongProperty detailIdProperty () {
+        return DetailId;
+    }
 
-    public SimpleLongProperty detailIdProperty() { return DetailId;}
+    public void setDetailId (long detailId) {
+        this.DetailId.set(detailId);
+    }
 
-    public void setDetailId(String detailId) {this.DetailId.set(Long.parseLong(detailId)); }
+    public long getTicketId () {
+        return TicketId.get();
+    }
 
-    public long getTicketId() {return TicketId.get(); }
+    public SimpleLongProperty ticketIdProperty () {
+        return TicketId;
+    }
 
-    public SimpleLongProperty ticketIdProperty() {return TicketId; }
+    public void setTicketId (long ticketId) {
+        this.TicketId.set(ticketId);
+    }
 
-    public void setTicketId(long ticketId) {this.TicketId.set(ticketId);}
+    public String getGoodsId () {
+        return GoodsId.get();
+    }
 
-    public long getGoodsId() {return GoodsId.get();}
+    public SimpleStringProperty goodsIdProperty () {
+        return GoodsId;
+    }
 
-    public SimpleLongProperty goodsIdProperty() {return GoodsId; }
+    public void setGoodsId (String goodsId) {
+        this.GoodsId.set(goodsId);
+    }
 
-    public void setGoodsId(long goodsId) {this.GoodsId.set(goodsId);}
+    public long getNumber () {
+        return Number.get();
+    }
 
-    public double getNumber() {return Number.get();}
+    public SimpleLongProperty numberProperty () {
+        return Number;
+    }
 
-    public SimpleDoubleProperty numberProperty() {return Number; }
-
-    public void setNumber(double number) {this.Number.set(number);}
+    public void setNumber (long number) {
+        this.Number.set(number);
+    }
 
     @Override
-    public String toString() {
+    public String toString () {
         return "Detail{" +
                 "DetailId=" + DetailId +
                 ", TicketId=" + TicketId +
